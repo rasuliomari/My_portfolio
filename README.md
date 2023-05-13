@@ -1,2 +1,3 @@
-# My_portfolio
-portfolio
+THIS IS MY PORTFOLIO
+IT SHOWS MY FULL DETAILS 
+.
