@@ -19,20 +19,20 @@ var paths = {
         www:        './public_html'
     },
     src: {
-        root:       'public_html/assets',
-        html:       'public_html/**/*.html',
-        css:        'public_html/assets/css/*.css',
-        js:         'public_html/assets/js/*.js',
-        vendors:    'public_html/assets/vendors/**/*.*',
-        imgs:       'public_html/assets/imgs/**/*.+(png|jpg|gif|svg)',
-        scss:       'public_html/assets/scss/**/*.scss'
+        root:       'public/assets',
+        html:       'public/**/*.html',
+        vendors:    'public/assets/vendors/**/*.*',
+        css:        'public/assets/css/*.css',
+        js:         'public/assets/js/*.js',
+        imgs:       'public/assets/imgs/**/*.+(png|jpg|gif|svg)',
+        scss:       'public/assets/scss/**/*.scss'
     },
     dist: {
-        root:       'public_html/dist',
-        css:        'public_html/dist/css',
-        js:         'public_html/dist/js',
-        imgs:       'public_html/dist/imgs',
-        vendors:    'public_html/dist/vendors'
+        root:       'public/dist',
+        css:        'public/dist/css',
+        js:         'public/dist/js',
+        imgs:       'public/dist/imgs',
+        vendors:    'public/dist/vendors'
     }
 }
 
@@ -49,7 +49,7 @@ gulp.task('sass', function() {
 gulp.task('css', function() {
     return gulp.src(paths.src.css)
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(concat('steller.css'))
+    .pipe(concat('rasuli.css'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.dist.css))
 });
@@ -58,7 +58,7 @@ gulp.task('css', function() {
 gulp.task('js', function() {
     return gulp.src(paths.src.js)
     .pipe(uglify())
-    .pipe(concat('steller.js'))
+    .pipe(concat('rasuli.js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.dist.js))
     .pipe(browserSync.stream());
